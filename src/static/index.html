@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RPG com IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Spectral:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section id="lobby">
+    <h1>RPG com IA</h1>
+    <div id="entrada">
+      <input id="jogador" placeholder="Seu nome (jogador)" maxlength="20">
+      <input id="room" placeholder="Código da sala" maxlength="40">
+      <button id="join">Entrar na sala</button>
+    </div>
+    <div id="escolha" hidden>
+      <h2>Escolha seu personagem</h2>
+      <div id="cards" class="grid"></div>
+    </div>
+  </section>
+
+  <main id="game" hidden>
+    <section id="ficha">
+      <header>
+        <h2 id="f-nome"></h2>
+        <small id="f-classe"></small>
+      </header>
+
+      <div id="barras">
+        <div class="barra pv"><span>PV</span><div><i id="b-pv"></i></div><b id="t-pv"></b></div>
+        <div class="barra san"><span>SAN</span><div><i id="b-san"></i></div><b id="t-san"></b></div>
+        <div class="barra pe"><span>PE</span><div><i id="b-pe"></i></div><b id="t-pe"></b></div>
+      </div>
+
+      <div id="penta">
+        <img src="img/pentagrama_ordem.png" alt="">
+      </div>
+
+      <h3>Perícias treinadas</h3>
+      <div id="pericias"></div>
+      <select id="outras" aria-label="Rolar perícia destreinada"></select>
+
+      <h3>Habilidades e rituais</h3>
+      <input id="alvo" placeholder="Alvo ou observação (opcional)" maxlength="60">
+      <div id="habs"></div>
+
+      <h3>Armas</h3>
+      <div id="armas"></div>
+
+      <h3>Defesa</h3>
+      <div id="defesa"></div>
+
+      <button id="iniciar" hidden>Iniciar aventura</button>
+    </section>
+
+    <section id="terminal">
+      <div id="grupo"></div>
+      <div id="inimigos" hidden></div>
+      <div id="log" aria-live="polite"></div>
+      <div id="banner" hidden></div>
+      <form id="form">
+        <span>&gt;</span>
+        <input id="text" autocomplete="off" placeholder="Conversa livre. Ações vão entre colchetes: [abro a porta devagar]">
+      </form>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
